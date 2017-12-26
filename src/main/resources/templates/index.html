@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <!--/*@thymesVar id="username" type="com.example.springbootdemo.vo.UserInfo"*/-->
+    <div th:text="${#httpServletRequest.getAttribute('user').username}"></div>
+    Hello world!
+</body>
+</html>
