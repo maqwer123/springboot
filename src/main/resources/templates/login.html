@@ -1,36 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>登录页面</title>
 </head>
 <body>
 
-    <form action="/userLogin" method="post">
+    <form action="@{/userLogin}" method="post">
         用户名：<input type="text" name="user" id="username"/><br/>
         密码：<input type="text" name="pass" id="password"/><br/>
         <button type="submit" id="submit" class="submit_button">登录</button>
     </form>
-    <a href="register">注册</a>
-    <script type="text/javascript">
+    <a href="/register">注册</a>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
         function check() {
             var username = document.getElementById('username').value;
-            console.log(username);
             var userlen = username.length;
             var passlen = document.getElementById('password').value.length;
             if(username===null||userlen===0){
                 alert("用户名不能为空！");
                 return false;
             }
+
+
             if(passlen===0){
                 alert("密码不能为空！");
                 return false;
             }
             return true;
         }
-    document.getElementById('submit').onclick = function (e) {
-        return check();
-    }
-</script>
+        document.getElementById('submit').onclick = function (e) {
+            return check();
+        }
+        /*]]>*/
+    </script>
 </body>
 </html>

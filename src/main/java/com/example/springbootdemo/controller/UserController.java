@@ -64,7 +64,7 @@ public class UserController {
             return "error";
         }
         else {
-            User user1 = service.LoginUser(user, pass);
+            User user1 = service.loginuser(user, pass);
             if (user1!=null) {
                 UserInfo userInfo = new UserInfo();
                 userInfo.setUsername(user1.getUsername());
@@ -73,12 +73,20 @@ public class UserController {
                 return "error";
             }
         }
-//        System.out.println(user+pass);
         return "index";
+    }
+    @RequestMapping(value = "/userRegister",method = RequestMethod.POST)
+    public String register(HttpServletRequest request, @RequestParam("user") String user, @RequestParam("pass") String pass,@RequestParam("name") String name,@RequestParam("phone") String phone){
+        User user2 = service.addUser(user,pass,name,phone);
+        return "login";
     }
     @RequestMapping("/login")
     public String LoginP(){
         return "login";
+    }
+    @RequestMapping("/register")
+    public String register() {
+        return "register";
     }
 
 //    @RequestMapping("/hello;")

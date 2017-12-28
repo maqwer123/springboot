@@ -1,28 +1,37 @@
 package com.example.springbootdemo.service.impl;
 
 import com.example.springbootdemo.bean.User;
+import com.example.springbootdemo.dao.UserDao;
 import com.example.springbootdemo.dao.UserMapper;
 import com.example.springbootdemo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserServiceImpl implements UserService {
 
     private final UserMapper userMapper;
 
+    private final UserDao userDao;
+
     @Autowired
-    public UserServiceImpl(UserMapper userMapper) {
+    public UserServiceImpl(UserMapper userMapper, UserDao userDao) {
         this.userMapper = userMapper;
+        this.userDao = userDao;
+    }
+
+
+    @Override
+    public User loginuser(java.lang.String username, java.lang.String password) {
+        return userDao.login(username,password);
     }
 
     @Override
-    public User LoginUser(String username,String password) {
-        return userMapper.login(username, password);
+    public User addUser(java.lang.String usename, java.lang.String password, java.lang.String realname, java.lang.String phone) {
+        User user = new User(usename,password,realname,phone);
+        userMapper.insert(user);
+        return user;
     }
-    @Transactional
-            (rollbackFor = RuntimeException.class)
 
     @Override
     public int removeUser() {
