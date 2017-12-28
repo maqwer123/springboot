@@ -47,9 +47,11 @@ public interface GoodsMapper {
      */
     @Insert({
         "insert into goods (id, gname, ",
-        "gprice, gnumber)",
+        "gprice, gnumber, ",
+        "guser, gphoto)",
         "values (#{id,jdbcType=INTEGER}, #{gname,jdbcType=VARCHAR}, ",
-        "#{gprice,jdbcType=VARCHAR}, #{gnumber,jdbcType=VARCHAR})"
+        "#{gprice,jdbcType=VARCHAR}, #{gnumber,jdbcType=VARCHAR}, ",
+        "#{guser,jdbcType=VARCHAR}, #{gphoto,jdbcType=VARCHAR})"
     })
     int insert(Goods record);
 
@@ -77,7 +79,7 @@ public interface GoodsMapper {
      */
     @Select({
         "select",
-        "id, gname, gprice, gnumber",
+        "id, gname, gprice, gnumber, guser, gphoto",
         "from goods",
         "where id = #{id,jdbcType=INTEGER}"
     })
@@ -118,7 +120,9 @@ public interface GoodsMapper {
         "update goods",
         "set gname = #{gname,jdbcType=VARCHAR},",
           "gprice = #{gprice,jdbcType=VARCHAR},",
-          "gnumber = #{gnumber,jdbcType=VARCHAR}",
+          "gnumber = #{gnumber,jdbcType=VARCHAR},",
+          "guser = #{guser,jdbcType=VARCHAR},",
+          "gphoto = #{gphoto,jdbcType=VARCHAR}",
         "where id = #{id,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(Goods record);
