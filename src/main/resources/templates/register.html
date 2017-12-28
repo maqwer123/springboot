@@ -11,6 +11,7 @@
         密码：<input type="text" name="pass" id="password"/><br/>
         姓名：<input type="text" name="name" id="realname"/><br/>
         手机号：<input type="text" name="phone" id="phone"/><br/>
+        收货地址：<input type="text" name="address" id="address"/><br/>
         <button type="submit" id="submit" class="submit_button" onclick="">注册</button>
     </form>
 
@@ -18,7 +19,6 @@
         /*<![CDATA[*/
 
         function check () {
-            console.log('fddf');
             var username = document.getElementById('username').value;
             var userlen = username.length;
             var passlen = document.getElementById('password').value.length;
@@ -26,6 +26,7 @@
             var reallen = realname.length;
             var phone = document.getElementById('phone').value;
             var phonelen = phone.length;
+            var addlen = document.getElementById("address").value.length;
             if(username===null||userlen===0){
                 alert("用户名不能为空！");
                 return false;
@@ -63,6 +64,10 @@
                     alert("手机号输入必须是数字！");
                     return false;
                 }
+            }
+            if(addlen===0){
+                alert("密码不能为空！");
+                return false;
             }
             return true;
         }

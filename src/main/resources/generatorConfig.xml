@@ -141,5 +141,17 @@
             <!--<columnOverride column="" javaType=""    jdbcType="" typeHandler=""  delimitedColumnName="" />-->
 
         </table>
+        <table tableName="vuser">
+            <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" type=""/>
+        </table>
+        <table tableName="goods">
+            <!--<generatedKey column="" sqlStatement="" identity="" type=""/>-->
+        </table>
+        <table tableName="order">
+            <!--<generatedKey column="" sqlStatement="" identity="" type=""/>-->
+        </table>
+        <table tableName="comm">
+            <!--<generatedKey column="" sqlStatement="" identity="" type=""/>-->
+        </table>
     </context>
 </generatorConfiguration>

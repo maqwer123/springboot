@@ -29,6 +29,40 @@ public class UserController {
         this.loginValidator = loginValidator;
     }
 
+    @RequestMapping(value = "/userLogin",method = RequestMethod.POST)
+    public String login(HttpServletRequest request, @RequestParam("user") String user, @RequestParam("pass") String pass){
+        List<String> errors = loginValidator.validate(user,pass);
+        if (errors.size()!=0){
+            return "error";
+        }
+        else {
+            User user1 = service.loginuser(user, pass);
+            if (user1!=null) {
+                UserInfo userInfo = new UserInfo();
+                userInfo.setUsername(user1.getUsername());
+                request.setAttribute("user", userInfo);
+            } else {
+                return "error";
+            }
+        }
+        return "index";
+    }
+    @RequestMapping(value = "/userRegister",method = RequestMethod.POST)
+    public String register(HttpServletRequest request, @RequestParam("user") String user, @RequestParam("pass") String pass,@RequestParam("name") String name,@RequestParam("phone") String phone,@RequestParam("address") String address){
+        User user2 = service.addUser(user,pass,name,phone,address);
+        return "login";
+    }
+    @RequestMapping("/login")
+    public String loginP(){
+        return "login";
+    }
+    @RequestMapping("/register")
+    public String register() {
+        return "register";
+    }
+
+}
+
 /*
     @RequestMapping(value = "/ajaxLogin",method = RequestMethod.GET)
     @ResponseBody
@@ -57,43 +91,3 @@ public class UserController {
     }
 */
 
-    @RequestMapping(value = "/userLogin",method = RequestMethod.POST)
-    public String Login(HttpServletRequest request, @RequestParam("user") String user, @RequestParam("pass") String pass){
-        List<String> errors = loginValidator.validate(user,pass);
-        if (errors.size()!=0){
-            return "error";
-        }
-        else {
-            User user1 = service.loginuser(user, pass);
-            if (user1!=null) {
-                UserInfo userInfo = new UserInfo();
-                userInfo.setUsername(user1.getUsername());
-                request.setAttribute("user", userInfo);
-            } else {
-                return "error";
-            }
-        }
-        return "index";
-    }
-    @RequestMapping(value = "/userRegister",method = RequestMethod.POST)
-    public String register(HttpServletRequest request, @RequestParam("user") String user, @RequestParam("pass") String pass,@RequestParam("name") String name,@RequestParam("phone") String phone){
-        User user2 = service.addUser(user,pass,name,phone);
-        return "login";
-    }
-    @RequestMapping("/login")
-    public String LoginP(){
-        return "login";
-    }
-    @RequestMapping("/register")
-    public String register() {
-        return "register";
-    }
-
-//    @RequestMapping("/hello;")
-//    public String Hello() {
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("index");
-//        service.LoginUser(idfjdkfj);
-//        return "index";
-//    }
-}

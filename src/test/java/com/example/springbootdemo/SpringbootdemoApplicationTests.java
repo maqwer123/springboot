@@ -16,23 +16,6 @@ public class SpringbootdemoApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		userService.addUser("qwe","fd","qrr","12345678987");
+		//userService.addUser("qwe","fd","qrr","12345678987");
 	}
-	@Test
-	public void contextLoads2() {
-		userService.addUser("qwe","fd","qrr","12345678987");
-	}
-	@Test
-	public void contextLoads4() {
-		userService.addUser("qwe","fd","qrr","12345678987");
-	}
-	@Test
-	public void contextLoads5() {
-		userService.addUser("qwe","fd","qrr","12345678987");
-	}
-	@Test
-	public void contextLoads6() {
-		userService.addUser("qwe","fd","qrr","12345678987");
-	}
-
 }
