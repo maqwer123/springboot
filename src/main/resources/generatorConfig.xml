@@ -141,16 +141,16 @@
             <!--<columnOverride column="" javaType=""    jdbcType="" typeHandler=""  delimitedColumnName="" />-->
 
         </table>
-        <table tableName="vuser">
-            <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" type=""/>
+        <table tableName="vuser" schema="computer1">
+            <generatedKey column="id" sqlStatement="MySql" identity="true" type="post"/>
         </table>
-        <table tableName="goods">
+        <table tableName="goods" schema="computer1">
             <!--<generatedKey column="" sqlStatement="" identity="" type=""/>-->
         </table>
-        <table tableName="order">
+        <table tableName="order" schema="computer1">
             <!--<generatedKey column="" sqlStatement="" identity="" type=""/>-->
         </table>
-        <table tableName="comm">
+        <table tableName="comm" schema="computer1">
             <!--<generatedKey column="" sqlStatement="" identity="" type=""/>-->
         </table>
     </context>

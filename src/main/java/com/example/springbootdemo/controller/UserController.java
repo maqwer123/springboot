@@ -48,8 +48,8 @@ public class UserController {
         return "index";
     }
     @RequestMapping(value = "/userRegister",method = RequestMethod.POST)
-    public String register(HttpServletRequest request, @RequestParam("user") String user, @RequestParam("pass") String pass,@RequestParam("name") String name,@RequestParam("phone") String phone,@RequestParam("address") String address){
-        User user2 = service.addUser(user,pass,name,phone,address);
+    public String register(HttpServletRequest request, @RequestParam("user") String user, @RequestParam("pass") String pass,@RequestParam("name") String name,@RequestParam("phone") String phone,@RequestParam("address") String address,@RequestParam("userphoto") String userphoto){
+        User user2 = service.addUser(user,pass,name,phone,address,userphoto);
         return "login";
     }
     @RequestMapping("/login")
@@ -60,7 +60,6 @@ public class UserController {
     public String register() {
         return "register";
     }
-
 }
 
 /*

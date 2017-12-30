@@ -6,12 +6,12 @@
 </head>
 <body>
 
-    <form action="@{/userLogin}" method="post">
+    <form th:action="@{/userLogin}" method="post">
         用户名：<input type="text" name="user" id="username"/><br/>
         密码：<input type="text" name="pass" id="password"/><br/>
         <button type="submit" id="submit" class="submit_button">登录</button>
     </form>
-    <a href="/register">注册</a>
+    <a th:href="@{/register}">注册</a>
     <script th:inline="javascript">
         /*<![CDATA[*/
         function check() {

@@ -23,12 +23,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User loginuser(java.lang.String username, java.lang.String password) {
-        return userMapper.login(username,password);
+        return userDao.login(username,password);
     }
 
     @Override
-    public User addUser(java.lang.String usename, java.lang.String password, java.lang.String realname, java.lang.String phone,java.lang.String address) {
-        User user = new User(usename,password,realname,phone,address);
+    public User addUser(java.lang.String usename, java.lang.String password, java.lang.String realname, java.lang.String phone,java.lang.String address,java.lang.String userphoto) {
+        User user = new User(usename,password,realname,phone,address,userphoto);
         userMapper.insert(user);
         return user;
     }

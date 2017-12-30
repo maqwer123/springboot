@@ -1,5 +1,6 @@
 package com.example.springbootdemo;
 
+import com.example.springbootdemo.bean.User;
 import com.example.springbootdemo.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +17,7 @@ public class SpringbootdemoApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		//userService.addUser("qwe","fd","qrr","12345678987");
+		User user = userService.loginuser("qwerww","123456");
+		System.out.print(user.toString());
 	}
 }

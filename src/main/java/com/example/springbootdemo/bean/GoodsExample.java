@@ -463,6 +463,146 @@ public class GoodsExample {
             addCriterion("gnumber not between", value1, value2, "gnumber");
             return (Criteria) this;
         }
+
+        public Criteria andGuserIsNull() {
+            addCriterion("guser is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuserIsNotNull() {
+            addCriterion("guser is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuserEqualTo(String value) {
+            addCriterion("guser =", value, "guser");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuserNotEqualTo(String value) {
+            addCriterion("guser <>", value, "guser");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuserGreaterThan(String value) {
+            addCriterion("guser >", value, "guser");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuserGreaterThanOrEqualTo(String value) {
+            addCriterion("guser >=", value, "guser");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuserLessThan(String value) {
+            addCriterion("guser <", value, "guser");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuserLessThanOrEqualTo(String value) {
+            addCriterion("guser <=", value, "guser");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuserLike(String value) {
+            addCriterion("guser like", value, "guser");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuserNotLike(String value) {
+            addCriterion("guser not like", value, "guser");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuserIn(List<String> values) {
+            addCriterion("guser in", values, "guser");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuserNotIn(List<String> values) {
+            addCriterion("guser not in", values, "guser");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuserBetween(String value1, String value2) {
+            addCriterion("guser between", value1, value2, "guser");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuserNotBetween(String value1, String value2) {
+            addCriterion("guser not between", value1, value2, "guser");
+            return (Criteria) this;
+        }
+
+        public Criteria andGphotoIsNull() {
+            addCriterion("gphoto is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGphotoIsNotNull() {
+            addCriterion("gphoto is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGphotoEqualTo(String value) {
+            addCriterion("gphoto =", value, "gphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andGphotoNotEqualTo(String value) {
+            addCriterion("gphoto <>", value, "gphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andGphotoGreaterThan(String value) {
+            addCriterion("gphoto >", value, "gphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andGphotoGreaterThanOrEqualTo(String value) {
+            addCriterion("gphoto >=", value, "gphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andGphotoLessThan(String value) {
+            addCriterion("gphoto <", value, "gphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andGphotoLessThanOrEqualTo(String value) {
+            addCriterion("gphoto <=", value, "gphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andGphotoLike(String value) {
+            addCriterion("gphoto like", value, "gphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andGphotoNotLike(String value) {
+            addCriterion("gphoto not like", value, "gphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andGphotoIn(List<String> values) {
+            addCriterion("gphoto in", values, "gphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andGphotoNotIn(List<String> values) {
+            addCriterion("gphoto not in", values, "gphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andGphotoBetween(String value1, String value2) {
+            addCriterion("gphoto between", value1, value2, "gphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andGphotoNotBetween(String value1, String value2) {
+            addCriterion("gphoto not between", value1, value2, "gphoto");
+            return (Criteria) this;
+        }
     }
 
     /**

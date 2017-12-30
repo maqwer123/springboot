@@ -603,6 +603,76 @@ public class UserExample {
             addCriterion("address not between", value1, value2, "address");
             return (Criteria) this;
         }
+
+        public Criteria andUserphotoIsNull() {
+            addCriterion("userphoto is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserphotoIsNotNull() {
+            addCriterion("userphoto is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserphotoEqualTo(String value) {
+            addCriterion("userphoto =", value, "userphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserphotoNotEqualTo(String value) {
+            addCriterion("userphoto <>", value, "userphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserphotoGreaterThan(String value) {
+            addCriterion("userphoto >", value, "userphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserphotoGreaterThanOrEqualTo(String value) {
+            addCriterion("userphoto >=", value, "userphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserphotoLessThan(String value) {
+            addCriterion("userphoto <", value, "userphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserphotoLessThanOrEqualTo(String value) {
+            addCriterion("userphoto <=", value, "userphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserphotoLike(String value) {
+            addCriterion("userphoto like", value, "userphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserphotoNotLike(String value) {
+            addCriterion("userphoto not like", value, "userphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserphotoIn(List<String> values) {
+            addCriterion("userphoto in", values, "userphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserphotoNotIn(List<String> values) {
+            addCriterion("userphoto not in", values, "userphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserphotoBetween(String value1, String value2) {
+            addCriterion("userphoto between", value1, value2, "userphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserphotoNotBetween(String value1, String value2) {
+            addCriterion("userphoto not between", value1, value2, "userphoto");
+            return (Criteria) this;
+        }
     }
 
     /**
