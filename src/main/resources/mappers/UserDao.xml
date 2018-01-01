@@ -94,4 +94,10 @@
         WHERE user.username = #{username} AND user.password = #{password}
     </select>
 
+    <select id="judge" resultType="com.example.springbootdemo.bean.User">
+        SELECT username
+        FROM user
+        WHERE user.username=#{username}
+    </select>
+
 </mapper>

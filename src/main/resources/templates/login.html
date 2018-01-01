@@ -3,15 +3,90 @@
 <head>
     <meta charset="UTF-8"/>
     <title>登录页面</title>
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" th:href="@{css/top.css}"/>
+    <style type="text/css">
+        .login-input-box .icon.icon-user{
+            background: url("img/denglu2.png") no-repeat;
+            width: 20px;
+            height: 20px;
 
-    <form th:action="@{/userLogin}" method="post">
+        }
+
+        .login-input-box .icon.icon-password{
+            background: url("img/mm.png") no-repeat;
+            width: 20px;
+            height: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+<div id="head">
+    <h1 class="bk" style="color: #fff">&nbsp;校&nbsp;园&nbsp;二&nbsp;手&nbsp;交&nbsp;易&nbsp;市&nbsp;场</h1>
+    <div id="yb">
+        <ul style="list-style: none; top: -20%">
+            <li>
+                <img src="img/kf.png" style="height: 20px;width: 20px; vertical-align:middle"/>
+                <p style="display: inline-block;padding-left: 2px;color: #fff;">000-0000-000</p>
+            </li>
+            <li>
+                <img src="img/av.png" style="height: 20px;width: 20px; vertical-align:middle"/>
+                <p  style="display: inline-block;padding-left: 2px"><a href="login.html" class="log1">Login</a></p>
+            </li>
+        <li>
+            <p class="log1">/</p></li>
+            <li>
+                <p style="display: inline-block;padding-left: 2px"><a href="register.html" class="log1">Register</a></p>
+            </li>
+        </ul>
+    </div></div>
+<!-- top-->
+<div id ="bg1" th:style="'background:url('+ @{img/1.jpg} +') no-repeat; width: 100%;height: 35%;background-size: cover;'">
+    <h1 class="wz">LOGIN</h1>
+</div>
+<div id="zj">
+    <h2 style="text-align: center; font-size: 30px"><j></j>&nbsp;&nbsp;&nbsp;LOGIN&nbsp;&nbsp;&nbsp;<j></j></h2>
+    <div class="bk1">
+        <form th:action="@{/userLogin}" method="post">
+            <div class="login-input-box">
+                <p>Account :</p>
+                <span class="icon icon-user"></span>
+                <input type="text" name="user" id="username" placeholder="Please enter your "/>
+            </div>
+            <div class="login-input-box">
+                <p>Password:</p>
+                <span class="icon icon-password"></span>
+                <input type="password" name="pass" id="password" placeholder="Please enter your password"/>
+            </div>
+        <div class="remember-box">
+            <label>
+                <input type="checkbox"/>&nbsp;Remember Me
+            </label>
+        </div>
+        <div class="login-button-box">
+            <button type="submit" class="btn btn-primary">LOGIN</button>
+        </div>
+        </form>
+    </div>
+</div>
+<div id="footer">
+    <h3 class="db"  style="color: #fff">
+        &nbsp;校&nbsp;园&nbsp;二&nbsp;手&nbsp;交&nbsp;易&nbsp;市&nbsp;场
+        © 2017 OHHOOHHO. All Rights Reserved | <a href="">Login system</a>
+
+    </h3>
+
+
+</div>
+
+   <!-- <form th:action="@{/userLogin}" method="post">
         用户名：<input type="text" name="user" id="username"/><br/>
         密码：<input type="text" name="pass" id="password"/><br/>
         <button type="submit" id="submit" class="submit_button">登录</button>
     </form>
-    <a th:href="@{/register}">注册</a>
+    <a th:href="@{/register}">注册</a>-->
+
     <script th:inline="javascript">
         /*<![CDATA[*/
         function check() {

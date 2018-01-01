@@ -80,13 +80,13 @@ public class User {
         this.userphoto = userphoto;
     }
 
-    public User(String username, String password, String realname, String telephone, String address, String userphoto) {
+    public User(String username, String password, String realname, String telephone, String address) {
         this.username = username;
         this.password = password;
         this.realname = realname;
         this.telephone = telephone;
         this.address = address;
-        this.userphoto = userphoto;
+
     }
 
     /**

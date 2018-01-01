@@ -22,13 +22,17 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
+    public User userjudge(java.lang.String username) {
+        return userDao.judge(username);
+    }
+    @Override
     public User loginuser(java.lang.String username, java.lang.String password) {
         return userDao.login(username,password);
     }
 
     @Override
-    public User addUser(java.lang.String usename, java.lang.String password, java.lang.String realname, java.lang.String phone,java.lang.String address,java.lang.String userphoto) {
-        User user = new User(usename,password,realname,phone,address,userphoto);
+    public User addUser(java.lang.String usename, java.lang.String password, java.lang.String realname, java.lang.String phone,java.lang.String address) {
+        User user = new User(usename,password,realname,phone,address);
         userMapper.insert(user);
         return user;
     }
