@@ -7,6 +7,8 @@
 <body>
     <!--/*@thymesVar id="username" type="com.example.springbootdemo.vo.UserInfo"*/-->
     <div th:text="${#httpServletRequest.getAttribute('user').username}"></div>
+    <td th:text="${#httpServletRequest.getAttribute('user').password}"></td>
+
     Hello world!
 </body>
 </html>

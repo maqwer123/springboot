@@ -15,9 +15,9 @@ public class SpringbootdemoApplicationTests {
 	@Autowired
 	UserService userService;
 
-	@Test
+	/*@Test
 	public void contextLoads() {
 		User user = userService.loginuser("qwerww","123456");
 		System.out.print(user.toString());
-	}
+	}*/
 }

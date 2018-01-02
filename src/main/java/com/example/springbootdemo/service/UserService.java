@@ -7,6 +7,6 @@ public interface UserService {
     public User addUser(String usename,String password,String realname,String phone,String address);
     public int removeUser();
     public int updateUser();
-    public User userjudge(String usrename);
+    public  User queryname(String username);
 
 }

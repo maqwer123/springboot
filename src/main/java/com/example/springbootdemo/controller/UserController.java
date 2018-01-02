@@ -38,9 +38,9 @@ public class UserController {
         else {
             User user1 = service.loginuser(user, pass);
             if (user1!=null) {
-                UserInfo userInfo = new UserInfo();
-                userInfo.setUsername(user1.getUsername());
-                request.setAttribute("user", userInfo);
+               /* UserInfo userInfo = new UserInfo();
+                userInfo.setUsername(user1.getUsername());*/
+                request.setAttribute("user", user1);
             } else {
                 return "error";
             }
@@ -48,18 +48,20 @@ public class UserController {
         return "index";
     }
     @RequestMapping(value = "/userRegister",method = RequestMethod.POST)
-    @ResponseBody
-
     public String register(HttpServletRequest request, @RequestParam("user") String user, @RequestParam("pass") String pass,@RequestParam("name") String name,@RequestParam("phone") String phone,@RequestParam("address") String address){
-        User judge = service.userjudge(user);
-        if(judge!=null){
-            return null;
-        }
-        else {
             User user2 = service.addUser(user, pass, name, phone, address);
             return "login";
-        }
     }
+
+    @RequestMapping(value = "/queryusername",method = RequestMethod.POST)
+    public String queryname(HttpServletRequest request, @RequestParam("user") String user){
+        request.setAttribute("user",service.queryname(user));
+        return "queryresult";
+    }
+
+
+
+
     @RequestMapping("/login")
     public String loginP(){
         return "login";
@@ -67,6 +69,10 @@ public class UserController {
     @RequestMapping("/register")
     public String register() {
         return "register";
+    }
+    @RequestMapping("/query")
+    public String queryname(){
+        return "query";
     }
 }
 

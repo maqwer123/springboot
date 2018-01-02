@@ -22,10 +22,6 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public User userjudge(java.lang.String username) {
-        return userDao.judge(username);
-    }
-    @Override
     public User loginuser(java.lang.String username, java.lang.String password) {
         return userDao.login(username,password);
     }
@@ -38,6 +34,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public  User queryname(java.lang.String usename){
+        User user2 = userDao.queryname(usename);
+        return user2;
+    }
+    @Override
     public int removeUser() {
         return 0;
     }
@@ -46,4 +47,6 @@ public class UserServiceImpl implements UserService {
     public int updateUser() {
         return 0;
     }
+
+
 }

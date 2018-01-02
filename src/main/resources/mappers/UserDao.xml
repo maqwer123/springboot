@@ -93,11 +93,11 @@
         FROM user
         WHERE user.username = #{username} AND user.password = #{password}
     </select>
-
-    <select id="judge" resultType="com.example.springbootdemo.bean.User">
-        SELECT username
+    <select id="queryname" resultType="com.example.springbootdemo.bean.User">
+        SELECT id,username,password,realname,telephone,address,userphoto
         FROM user
-        WHERE user.username=#{username}
+        WHERE username=#{username}
     </select>
+
 
 </mapper>
